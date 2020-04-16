@@ -43,22 +43,29 @@ const sumNumbers = function(array) {
     }
 }
 
-
+//3.1 BONUS
+// THROW ERROR MESSAGE IF OBJECT OR ARRAY
 const sum = function(array) {
-    if (array.length === 0) { // null
-        return 0;
-    } else {
-        let sum = 0;
-        for (let i = 0; i < array.length; i++) {
 
-            sum = sum + array[i];
+        let sum1 = 0;
+        if (array.length === 0) { // null
+            return 0;
+        } else {
+            for (i = 0; i < array.length; i++) {
+                if (typeof(array[i]) === 'number') {
+                    sum1 = sum1 + array[i];
+                } else if (typeof(array[i]) === 'string') {
+                    sum1 = sum1 + array[i].length;
+
+                } else if (array[i] === true) {
+                    sum1 = sum1 + 1;
+                }
+            }
+            return sum1;
         }
-        return sum;
     }
-}
-
-// Iteration #4: Calculate the average
-// Level 1: Array of numbers
+    // Iteration #4: Calculate the average
+    // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 const averageNumbers = function(array) {
@@ -74,7 +81,26 @@ const averageNumbers = function(array) {
     }
 }
 
-// Level 2: Array of strings
+// 4.1 BONUS    // BOOLEAN!
+const avg = function(array) {
+        let sum1 = 0;
+        if (array.length === 0) { // null
+            return null;
+        } else {
+            for (i = 0; i < array.length; i++) {
+                if (typeof(array[i]) === 'number') {
+                    sum1 = sum1 + array[i];
+                } else if (typeof(array[i]) === 'string') {
+                    sum1 = sum1 + array[i].length;
+
+                } else if (array[i] === true) {
+                    sum1 = sum1 + 1;
+                };
+            }
+            return sum1 / array.length;
+        }
+    }
+    // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
 const averageWordLength = function(array) {
@@ -113,6 +139,22 @@ Do this in the form of a function uniquifyArray that receives an array of words 
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
+const doesWordExist = function(array, word) {
+
+    if (array.length === 0) { // null
+        return null;
+    } else {
+        let doesExist = false;
+        for (let i = 0; i < array.length; i++) {
+            if (word === array[i]) {
+                doesExist = true;
+            }
+        }
+        return doesExist;
+    }
+}
+
+
 // Iteration #7: Count repetition
 const wordsCount = [
     'machine',
@@ -127,6 +169,22 @@ const wordsCount = [
     'disobedience',
     'matter'
 ];
+
+const howManyTimes = function(array, word) {
+
+    if (array.length === 0) { // null
+        return 0;
+    } else {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (word === array[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
 
 // Iteration #8: Bonus
 
